@@ -21,7 +21,7 @@ function App() {
 						type="text" 
 						defaultValue={userData[value]} 
 						onChange={ 
-							e => {setUserData({...userData, value: e.target.value})
+							(e) => {setUserData({...userData, [value]: e.target.value})
 							console.log(userData)
 							console.log(e.target.value)}
 						}           
@@ -40,7 +40,7 @@ function App() {
 	  )
 	}
 	return (
-	  <form onSubmit={ e => e.preventDefault()} >
+	  <form onSubmit={ (e) => e.preventDefault() } >
 		 <CreateInput label='First name: ' value='firstName'/>
 		 <CreateInput label='Last name: ' value='lastName'/>
 		 <CreateButton />
